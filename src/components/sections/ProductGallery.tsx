@@ -11,8 +11,8 @@ export default function ProductGallery() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const { addToCart } = useCart();
 
-  const filteredProducts = selectedCategory === 'all' 
-    ? allProducts 
+  const filteredProducts = selectedCategory === 'all'
+    ? allProducts
     : allProducts.filter(product => product.category === selectedCategory);
 
   const handleAddToCart = (product: Product) => {
@@ -27,7 +27,7 @@ export default function ProductGallery() {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-2">
-        
+
         {/* Заголовок секции */}
         <div className="text-center mb-8">
           {/* Badge */}
@@ -45,11 +45,11 @@ export default function ProductGallery() {
 
         {/* Фильтры */}
         <div className="flex flex-wrap justify-center gap-3 mb-8">
-          <button 
+          <button
             onClick={() => setSelectedCategory('all')}
             className={`px-2 py-2 rounded-lg font-semibold ${
-              selectedCategory === 'all' 
-                ? 'bg-primary text-white' 
+              selectedCategory === 'all'
+                ? 'bg-primary text-white'
                 : 'bg-white text-gray-700 border border-gray-200 hover:border-primary'
             }`}
           >
@@ -77,24 +77,34 @@ export default function ProductGallery() {
               key={product.id}
               className="bg-white rounded-xl p-2 border border-gray-200 hover:border-primary transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
             >
-              
+
               {/* Изображение продукта */}
-              <div className="aspect-square bg-accent rounded-lg mb-1 flex items-center justify-center">
-                <span className="text-5xl">
-                  {product.category === 'baklava' && '🍯'}
-                  {product.category === 'kumpir' && '🥔'}
-                  {product.category === 'oliven' && '🫒'}
-                  {product.category === 'antipasti' && '🧀'}
-                </span>
+              <div className="aspect-square bg-accent rounded-lg mb-1 overflow-hidden">
+                {product.image ? (
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <span className="text-5xl">
+                      {product.category === 'baklava' && '🍯'}
+                      {product.category === 'kumpir' && '🥔'}
+                      {product.category === 'oliven' && '🫒'}
+                      {product.category === 'antipasti' && '🧀'}
+                    </span>
+                  </div>
+                )}
               </div>
-              
+
               {/* Информация о продукте */}
-              <div className="space-y-3 flex flex-col flex-grow">  {/* ← добавил */}
+              <div className="space-y-3 flex flex-col flex-grow">
                 <h3 className="font-semibold text-lg text-gray-900">
                   {product.name}
                 </h3>
-                
-                <p className="text-gray-600 text-sm leading-relaxed flex-grow">  {/* ← уже есть flex-grow */}
+
+                <p className="text-gray-600 text-sm leading-relaxed flex-grow">
                   {product.description}
                 </p>
 
@@ -102,8 +112,8 @@ export default function ProductGallery() {
                   <div className="text-lg font-bold text-primary">
                     {product.price}
                   </div>
-                  
-                  <button 
+
+                  <button
                     onClick={() => handleAddToCart(product)}
                     className="bg-primary text-white px-2 py-1 text-sm rounded-lg hover:bg-secondary transition-colors font-semibold"
                   >

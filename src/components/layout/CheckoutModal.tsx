@@ -32,7 +32,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
       setIsSubmitting(false)
       setIsSuccess(true)
       clearCart()
-      
+
       // Автоматическое закрытие через 3 секунды
       setTimeout(() => {
         onClose()
@@ -58,7 +58,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
   }
 
   return (
-    <div 
+    <div
       className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
       onClick={(e) => {
         if (e.target === e.currentTarget) {
@@ -74,7 +74,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
             <p className="text-gray-600 mt-2">
               Wir haben Ihre Bestellung erhalten und werden uns in Kürze bei Ihnen melden.
             </p>
-            <button 
+            <button
               onClick={onClose}
               className="mt-6 bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition-colors"
             >
@@ -87,7 +87,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
             <div className="bg-primary text-white p-6 rounded-t-2xl">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold">Bestellung abschließen</h2>
-                <button 
+                <button
                   onClick={onClose}
                   className="text-white/90 hover:text-white text-2xl font-bold"
                 >
@@ -95,7 +95,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                 </button>
               </div>
             </div>
-            
+
             <div className="p-6">
               {/* Выбор способа получения */}
               <div className="mb-6">
@@ -103,8 +103,8 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {/* Самовывоз */}
                   <label className={`cursor-pointer border rounded-lg p-4 transition-all ${
-                    deliveryMethod === 'pickup' 
-                      ? 'border-primary bg-accent' 
+                    deliveryMethod === 'pickup'
+                      ? 'border-primary bg-accent'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}>
                     <div className="flex items-center gap-3">
@@ -133,8 +133,8 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
 
                   {/* Доставка */}
                   <label className={`cursor-pointer border rounded-lg p-4 transition-all ${
-                    deliveryMethod === 'delivery' 
-                      ? 'border-primary bg-accent' 
+                    deliveryMethod === 'delivery'
+                      ? 'border-primary bg-accent'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}>
                     <div className="flex items-center gap-3">
@@ -180,20 +180,20 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                       </div>
                     ))}
                   </div>
-                  
+
                   <div className="border-t mt-4 pt-4 space-y-2">
                     <div className="flex justify-between text-sm">
                       <span>Zwischensumme:</span>
                       <span>{totalPrice.toFixed(2)} €</span>
                     </div>
-                    
+
                     {deliveryMethod === 'delivery' && (
                       <div className="flex justify-between text-sm">
                         <span>Lieferkosten:</span>
                         <span>+{deliveryCost.toFixed(2)} €</span>
                       </div>
                     )}
-                    
+
                     <div className="flex justify-between text-xl font-semibold border-t pt-2">
                       <span>Gesamtsumme:</span>
                       <span>{finalPrice.toFixed(2)} €</span>
@@ -217,7 +217,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                         placeholder="Ihr vollständiger Name"
                       />
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-medium mb-1">E-Mail *</label>
                       <input
@@ -230,7 +230,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                         placeholder="ihre@email.de"
                       />
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-medium mb-1">Telefon *</label>
                       <input
@@ -240,10 +240,10 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:border-primary focus:outline-none focus:ring-0"
-                        placeholder="+49 123 456789"
+                        placeholder="+49 176 6385 6269"
                       />
                     </div>
-                    
+
                     {/* Показываем поле адреса только для доставки */}
                     {deliveryMethod === 'delivery' && (
                       <div>
@@ -262,7 +262,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                         </p>
                       </div>
                     )}
-                    
+
                     <div>
                       <label className="block text-sm font-medium mb-1">Nachricht (optional)</label>
                       <textarea
@@ -274,7 +274,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                         placeholder="Besondere Wünsche oder Anmerkungen..."
                       />
                     </div>
-                    
+
                     <button
                       type="submit"
                       disabled={isSubmitting || items.length === 0}

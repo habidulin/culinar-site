@@ -20,8 +20,8 @@ export default function Cart({ onOpenCheckout }: CartProps) {
     return (
       <>
         {/* Кнопка WhatsApp */}
-        <button 
-          onClick={() => window.open('https://wa.me/49123456789', '_blank')}
+        <button
+          onClick={() => window.open('https://wa.me/4917663856269', '_blank')}
           className="fixed bottom-24 right-3 bg-[#25D366] text-white w-11 h-11 rounded-xl hover:bg-[#128C7E] transition-colors z-50 flex items-center justify-center shadow-xl"
           title="WhatsApp Bestellung"
         >
@@ -31,7 +31,7 @@ export default function Cart({ onOpenCheckout }: CartProps) {
         </button>
 
         {/* Кнопка корзины */}
-        <button 
+        <button
           onClick={() => setIsOpen(true)}
           className="fixed bottom-9 right-3 bg-white text-primary w-12 h-12 rounded-xl hover:bg-gray-100 transition-colors z-50 flex items-center justify-center border-2 shadow-xl"
         >
@@ -53,7 +53,7 @@ export default function Cart({ onOpenCheckout }: CartProps) {
         <div className="bg-primary text-white p-6">
           <div className="flex justify-between items-center">
             <h2 className="text-2xl font-bold">Ihr Warenkorb</h2>
-            <button 
+            <button
               onClick={() => setIsOpen(false)}
               className="text-white/90 hover:text-white text-2xl"
             >
@@ -78,24 +78,24 @@ export default function Cart({ onOpenCheckout }: CartProps) {
                     <h3 className="font-medium text-gray-900">{item.name}</h3>
                     <p className="text-primary font-semibold">{item.price}</p>
                   </div>
-                  
+
                   <div className="flex items-center gap-2">
-                    <button 
+                    <button
                       onClick={() => updateQuantity(item.id, item.quantity - 1)}
                       className="w-8 h-8 bg-white border border-gray-200 rounded-full hover:border-gray-300 transition-colors"
                     >
                       -
                     </button>
                     <span className="font-semibold w-8 text-center">{item.quantity}</span>
-                    <button 
+                    <button
                       onClick={() => updateQuantity(item.id, item.quantity + 1)}
                       className="w-8 h-8 bg-white border border-gray-200 rounded-full hover:border-gray-300 transition-colors"
                     >
                       +
                     </button>
                   </div>
-                  
-                  <button 
+
+                  <button
                     onClick={() => removeFromCart(item.id)}
                     className="text-gray-400 hover:text-red-500 transition-colors"
                   >
@@ -114,8 +114,8 @@ export default function Cart({ onOpenCheckout }: CartProps) {
               <span>Gesamtsumme:</span>
               <span>{totalPrice.toFixed(2)} €</span>
             </div>
-            
-            <button 
+
+            <button
               onClick={handleOpenCheckout}
               className="w-full bg-primary text-white py-3.5 rounded-lg font-medium hover:bg-secondary transition-colors"
             >

@@ -14,129 +14,106 @@ export const allProducts: Product[] = [
     id: 'pistazie-baklava',
     name: 'Pistazien Baklava',
     category: 'baklava',
-    price: '12,99 €',
-    description: 'Hochwertige Antep-Pistazien',
-    isHighlight: true
+    price: '3,50 €',
+    description: 'Hochwertige Antep-Pistazien (pro 100g)',
+    isHighlight: true,
+    image: '/products/pistazien.jpg'
   },
   {
     id: 'walnuss-baklava',
     name: 'Walnuss Baklava',
-    category: 'baklava', 
-    price: '11,99 €',
-    description: 'Aromatische Walnüsse'
+    category: 'baklava',
+    price: '3,00 €',
+    description: 'Aromatische Walnüsse (pro 100g)',
+    isHighlight: true,
+    image: '/products/cevizl.jpg'
   },
   {
-    id: 'gemischte-baklava',
-    name: 'Gemischte Baklava',
+    id: 'fistik-sarma',
+    name: 'Fistik Sarma mit Pistazien',
     category: 'baklava',
-    price: '15,99 €',
-    description: 'Vielfalt unserer Spezialitäten'
+    price: '3,00 €',
+    description: 'Fein gerollt mit Pistazien (pro 100g)',
+    isHighlight: true,
+    image: '/products/sarma.jpg'
   },
   {
     id: 'kadayif',
     name: 'Kadayif',
     category: 'baklava',
-    price: '13,99 €',
-    description: 'Feine Teigfäden mit Nüssen'
+    price: '3,50 €',
+    description: 'Feine Teigfäden mit Nüssen (pro 100g)',
+    isHighlight: true,
+    image: '/products/kadayif.jpg'
   },
 
   // KUMPIR VARIATIONEN
   {
     id: 'kumpir-klasik',
-    name: 'Kumpir Klasik',
+    name: 'Sportler Kumpir',
     category: 'kumpir',
-    price: '8,50 €',
-    description: 'Mit Käse, Mais, Erbsen'
+    price: '4,99 €',
+    description: 'Traditionell gefüllte Ofenkartoffel'
+  },
+  {
+    id: 'kumpir-avocado',
+    name: 'Avocado Kumpir',
+    category: 'kumpir',
+    price: '7,50 €',
+    description: 'Mit frischer Avocado und Gemüse'
   },
   {
     id: 'kumpir-spezial',
-    name: 'Kumpir Spezial',
+    name: 'Culinar Kumpir',
     category: 'kumpir',
-    price: '9,50 €', 
-    description: 'Mit allem Belag'
-  },
-  {
-    id: 'kumpir-vegan',
-    name: 'Kumpir Vegan',
-    category: 'kumpir',
-    price: '7,50 €',
-    description: 'Pflanzliche Zutaten'
-  },
-
-  // OLIVEN SORTEN
-  {
-    id: 'grune-oliven',
-    name: 'Grüne Oliven',
-    category: 'oliven',
-    price: '4,99 €',
-    description: 'Mild und fruchtig'
-  },
-  {
-    id: 'schwarze-oliven',
-    name: 'Schwarze Oliven', 
-    category: 'oliven',
-    price: '5,99 €',
-    description: 'Intensiv und würzig'
-  },
-  {
-    id: 'gefuelle-oliven',
-    name: 'Gefüllte Oliven',
-    category: 'oliven',
-    price: '6,99 €',
-    description: 'Mit Mandel oder Paprika'
+    price: '7,00 €',
+    description: 'Unsere Haus-Spezialität'
   },
 
   // ANTIPASTI & CREMES
   {
-    id: 'hummus',
-    name: 'Hummus',
+    id: 'avocado-creme',
+    name: 'Avocado Creme',
     category: 'antipasti',
-    price: '3,99 €',
-    description: 'Cremiger Kichererbsen-Dip'
+    price: '2,70 €',
+    description: 'Frische Avocado-Creme (pro 100g)'
   },
   {
-    id: 'baba-ghanoush',
-    name: 'Baba Ghanoush',
+    id: 'roter-grieche',
+    name: 'Roter Grieche',
     category: 'antipasti',
-    price: '4,49 €',
-    description: 'Auberginen-Spezialität'
+    price: '2,70 €',
+    description: 'Mediterrane Paprika-Creme (pro 100g)'
   },
   {
-    id: 'tzatziki',
-    name: 'Tzatziki',
+    id: 'walnuss-feigen-creme',
+    name: 'Walnuss-Feigen Creme',
     category: 'antipasti',
-    price: '3,49 €',
-    description: 'Erfrischender Joghurt-Dip'
-  },
-  {
-    id: 'pesto',
-    name: 'Pesto Rosso',
-    category: 'antipasti', 
-    price: '4,99 €',
-    description: 'Tomaten-Basilikum Creme'
-  },
-  {
-    id: 'antipasti-teller',
-    name: 'Antipasti Teller',
-    category: 'antipasti',
-    price: '12,99 €',
-    description: 'Große Auswahl'
+    price: '2,70 €',
+    description: 'Süß-würzige Feigencreme (pro 100g)'
   },
 
-  // FEINKOST PAKETE
+  // OLIVEN
   {
-    id: 'feinkost-basic',
-    name: 'Feinkost Paket Basic',
-    category: 'antipasti',
-    price: '19,99 €',
-    description: 'Einstiegspaket'
+    id: 'oliven-mandeln',
+    name: 'Oliven mit Mandeln',
+    category: 'oliven',
+    price: '2,30 €',
+    description: 'Gefüllt mit Mandeln (pro 100g)'
   },
   {
-    id: 'feinkost-premium',
-    name: 'Feinkost Paket Premium',
-    category: 'antipasti',
-    price: '29,99 €',
-    description: 'Premium Auswahl'
+    id: 'oliven-knoblauch',
+    name: 'Oliven mit Knoblauch',
+    category: 'oliven',
+    price: '2,30 €',
+    description: 'Intensiv mit Knoblauch (pro 100g)'
+  },
+  {
+    id: 'schwarze-oliven',
+    name: 'Schwarze Oliven ohne Kern',
+    category: 'oliven',
+    price: '2,10 €',
+    description: 'Eingelegt, kernlos (pro 100g)'
   }
 ]
 
@@ -174,7 +151,7 @@ export const featuredProducts: Product[] = [
     isHighlight: true
   },
   {
-    id: '2', 
+    id: '2',
     name: 'Gemischte Baklava',
     category: 'baklava',
     price: 'Ab 15,99 €',
@@ -183,7 +160,7 @@ export const featuredProducts: Product[] = [
   {
     id: '3',
     name: 'Feinkost Paket',
-    category: 'antipasti', 
+    category: 'antipasti',
     price: 'Ab 24,99 €',
     description: 'Auswahl unserer besten Antipasti'
   }

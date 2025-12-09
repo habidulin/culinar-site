@@ -2,7 +2,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        
+
         {/* Заголовок */}
         <div className="text-center mb-8">
           {/* Badge */}
@@ -19,17 +19,17 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          
+
           {/* Форма */}
           <div className="bg-white rounded-xl p-3 border border-gray-200">
             <h3 className="text-2xl font-bold text-primary mb-6">Schreiben Sie uns</h3>
-            
+
             <form className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-gray-700 mb-2 font-medium">Name *</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none"
                     placeholder="Ihr Name"
                     required
@@ -37,35 +37,35 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className="block text-gray-700 mb-2 font-medium">E-Mail *</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none"
                     placeholder="ihre@email.de"
                     required
                   />
                 </div>
               </div>
-              
+
               <div>
                 <label className="block text-gray-700 mb-2 font-medium">Betreff</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none"
                   placeholder="Betreff Ihrer Nachricht"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-gray-700 mb-2 font-medium">Nachricht *</label>
-                <textarea 
+                <textarea
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none"
                   placeholder="Ihre Nachricht an uns..."
                   required
                 ></textarea>
               </div>
-              
-              <button 
+
+              <button
                 type="submit"
                 className="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-secondary transition-colors"
               >
@@ -83,9 +83,9 @@ export default function Contact() {
                 content: 'Babelsberg Straße 16, 14473 Potsdam'
               },
               {
-                icon: '📞', 
+                icon: '📞',
                 title: 'Telefon',
-                content: '+49 (0) 331 12345678'
+                content: '+49 176 6385 6269'
               },
               {
                 icon: '✉️',
@@ -98,8 +98,8 @@ export default function Contact() {
                 content: 'Mo-Sa: 10:00-20:00\nSonntag: Geschlossen'
               }
             ].map((contact, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white rounded-xl p-6 border border-gray-200"
               >
                 <div className="flex items-start gap-4">
@@ -117,18 +117,39 @@ export default function Contact() {
         </div>
 
         {/* Карта */}
+        {/* <div className="mt-12 bg-white rounded-xl p-4 border border-gray-200 max-w-6xl mx-auto">
+          <h4 className="font-bold text-gray-900 mb-4 text-lg">So finden Sie uns</h4>
+          <div className="h-64 rounded-lg overflow-hidden border border-gray-200">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d152.17420165274828!2d13.0674627!3d52.3924074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8f5c23d850f45%3A0xbadf974c6cb4e4f1!2sCulinar%20Baklava%20und%20Feinkost!5e0!3m2!1sru!2sde!4v1765283691152!5m2!1sru!2sde"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Culinar Baklava auf Google Maps"
+            />
+          </div>
+        </div> */}
+
         <div className="mt-12 bg-white rounded-xl p-4 border border-gray-200 max-w-6xl mx-auto">
           <h4 className="font-bold text-gray-900 mb-4 text-lg">So finden Sie uns</h4>
-          <div className="h-64 bg-accent rounded-lg flex items-center justify-center border border-gray-200">
-            <div className="text-center">
-              <span className="text-4xl">🗺️</span>
-              <p className="text-gray-600 mt-2">Google Maps Integration</p>
-              <button className="bg-primary text-white px-6 py-2 rounded-lg mt-4 hover:bg-secondary transition-colors font-semibold">
-                Route planen
-              </button>
-            </div>
+          <div className="h-64 rounded-lg overflow-hidden border border-gray-200">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d152.17420165274828!2d13.0674627!3d52.3924074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8f5c23d850f45%3A0xbadf974c6cb4e4f1!2sCulinar%20Baklava%20und%20Feinkost!5e0!3m2!1sru!2sde!4v1765283691152!5m2!1sru!2sde"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Culinar Baklava auf Google Maps"
+              aria-label="Google Maps Karte mit Standort von Culinar Baklava"
+            />
           </div>
         </div>
+
       </div>
     </section>
   )

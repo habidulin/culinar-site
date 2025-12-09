@@ -2,10 +2,10 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-200 py-16">
       <div className="container mx-auto px-4">
-        
+
         {/* Основной контент */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          
+
           {/* Колонка 1 - О компании */}
           <div>
             <div className="flex items-center gap-3 mb-6">
@@ -18,7 +18,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Traditionelle türkische Spezialitäten mit Liebe zubereitet. 
+              Traditionelle türkische Spezialitäten mit Liebe zubereitet.
               Seit 1995 für Sie in Potsdam.
             </p>
             <div className="flex items-center gap-2">
@@ -40,7 +40,7 @@ export default function Footer() {
                 { name: 'Kontakt', href: '#contact' },
               ].map((link, index) => (
                 <li key={index}>
-                  <a 
+                  <a
                     href={link.href}
                     className="text-gray-600 hover:text-primary transition-colors"
                   >
@@ -57,7 +57,7 @@ export default function Footer() {
             <div className="space-y-3 text-gray-600">
               <div>Babelsberg Str. 16</div>
               <div>14473 Potsdam</div>
-              <div>+49 (0) 331 12345678</div>
+              <div>+49 176 6385 6269</div>
               <div>info@culinar-baklava.de</div>
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function Footer() {
                 { icon: '📷', name: 'Instagram' },
                 { icon: '💬', name: 'WhatsApp' }
               ].map((social, index) => (
-                <a 
+                <a
                   key={index}
                   href="#"
                   className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
@@ -81,12 +81,12 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-            
+
             <div>
               <h5 className="font-semibold text-gray-900 mb-3">Newsletter</h5>
               <div className="flex">
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   placeholder="Ihre E-Mail"
                   className="flex-1 px-4 py-3 border border-gray-300 rounded-l-lg focus:outline-none focus:border-primary"
                 />

@@ -12,7 +12,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         // Скролл вниз - скрываем
         setIsVisible(false);
@@ -20,7 +20,7 @@ export default function Header() {
         // Скролл вверх - показываем
         setIsVisible(true);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
@@ -36,7 +36,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Гамбургер для мобильных */}
           <div className="md:hidden">
-            <button 
+            <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2"
             >
@@ -48,9 +48,9 @@ export default function Header() {
 
           {/* Логотип */}
           <div className="flex flex-col items-center">
-            <Image 
+            <Image
               src={logo}
-              alt="Culinar" 
+              alt="Culinar"
               width={119}
               height={119}
               className="object-contain"
@@ -79,16 +79,16 @@ export default function Header() {
           </nav>
 
           {/* CTA Button для ПК */}
-          <a 
-            href="tel:+49123456789"
+          <a
+            href="tel:+4917663856269"
             className="hidden md:block bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors font-semibold"
           >
             Jetzt bestellen
           </a>
 
           {/* CTA Button для мобильных */}
-          <a 
-            href="tel:+49123456789"
+          <a
+            href="tel:+4917663856269"
             className="md:hidden bg-primary text-white px-3 py-2 rounded-lg hover:bg-secondary transition-colors font-semibold text-sm"
           >
             Bestellen
