@@ -64,7 +64,7 @@ export default function Header() {
           <nav className="hidden md:flex gap-8">
             {[
               { href: '#home', label: 'Home' },
-              { href: '#products', label: 'Produkte' },
+              { href: '#ProductGallery', label: 'Produkte' },
               { href: '#about', label: 'Über Uns' },
               { href: '#contact', label: 'Kontakt' },
             ].map((link) => (
@@ -101,7 +101,7 @@ export default function Header() {
             <nav className="flex flex-col gap-4">
               {[
                 { href: '#home', label: 'Home' },
-                { href: '#products', label: 'Produkte' },
+                { href: '#ProductGallery', label: 'Produkte' },
                 { href: '#about', label: 'Über Uns' },
                 { href: '#contact', label: 'Kontakt' },
               ].map((link) => (

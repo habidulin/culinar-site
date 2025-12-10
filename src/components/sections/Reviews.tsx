@@ -1,4 +1,4 @@
-import { MessageCircle, Star, Truck, Trophy } from 'lucide-react';
+// import { MessageCircle, Star, Truck, Trophy } from 'lucide-react';
 
 export default function Reviews() {
   const reviews = [
@@ -39,12 +39,12 @@ export default function Reviews() {
     }
   ]
 
-  const trustItems = [
-    { icon: <MessageCircle className="w-12 h-12 text-primary" />, label: '500+ Zufriedene Kunden' },
-    { icon: <Star className="w-12 h-12 text-primary" />, label: '5,0 Sterne Bewertung' },
-    { icon: <Truck className="w-12 h-12 text-primary" />, label: 'Frische täglich' },
-    { icon: <Trophy className="w-12 h-12 text-primary" />, label: 'Beste Qualität' }
-  ]
+  // const trustItems = [
+  //   { icon: <MessageCircle className="w-12 h-12 text-primary" />, label: '500+ Zufriedene Kunden' },
+  //   { icon: <Star className="w-12 h-12 text-primary" />, label: '5,0 Sterne Bewertung' },
+  //   { icon: <Truck className="w-12 h-12 text-primary" />, label: 'Frische täglich' },
+  //   { icon: <Trophy className="w-12 h-12 text-primary" />, label: 'Beste Qualität' }
+  // ]
 
   return (
     <section className="py-20 bg-white">
@@ -52,10 +52,11 @@ export default function Reviews() {
         
         {/* Заголовок */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full mb-4">
+          {/* Badge */}
+          {/* <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full mb-4">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             <span className="text-sm font-medium text-gray-700">Stimmen</span>
-          </div>
+          </div> */}
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-2">
             Kundenbewertungen
           </h2>
@@ -105,14 +106,14 @@ export default function Reviews() {
         </div>
 
         {/* Доверительные элементы */}
-        <div className="grid grid-cols-3 md:grid-cols-4 gap-3 text-center max-w-4xl mx-auto">
+        {/* <div className="grid grid-cols-3 md:grid-cols-4 gap-3 text-center max-w-4xl mx-auto">
           {trustItems.map((item, index) => (
             <div key={index} className="flex flex-col items-center">
               <div className="flex justify-center mb-2">{item.icon}</div>
               <span className="text-gray-700 text-sm font-medium">{item.label}</span>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   )

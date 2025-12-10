@@ -1,6 +1,6 @@
 import Hero from '@/components/sections/Hero'
-import Benefits from '@/components/sections/Benefits'
-import ProductCategories from '@/components/sections/ProductCategories'
+// import Benefits from '@/components/sections/Benefits'
+// import ProductCategories from '@/components/sections/ProductCategories'
 import ProductGallery from '@/components/sections/ProductGallery'
 import HowItWorks from '@/components/sections/HowItWorks'
 import About from '@/components/sections/About'
@@ -12,8 +12,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Benefits />
-      <ProductCategories />
       <ProductGallery />
       <HowItWorks />
       <About />

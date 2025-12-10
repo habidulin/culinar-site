@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { productCategories } from '@/data/products'
 import { allProducts } from '@/data/products'
 import { useCart } from '@/context/CartContext'
@@ -25,16 +26,16 @@ export default function ProductGallery() {
   };
 
   return (
-    <section className="py-20 bg-background">
+    <section id="ProductGallery" className="py-20 bg-white">
       <div className="container mx-auto px-2">
 
         {/* Заголовок секции */}
         <div className="text-center mb-8">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full mb-2">
+          {/* <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full mb-2">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             <span className="text-sm font-medium text-gray-700">Handgemacht</span>
-          </div>
+          </div> */}
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-2">
             Unsere Köstlichkeiten
           </h2>
@@ -44,10 +45,10 @@ export default function ProductGallery() {
         </div>
 
         {/* Фильтры */}
-        <div className="flex flex-wrap justify-center gap-3 mb-8">
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
           <button
             onClick={() => setSelectedCategory('all')}
-            className={`px-2 py-2 rounded-lg font-semibold ${
+            className={`px-2 py-1 rounded-lg font-semibold ${
               selectedCategory === 'all'
                 ? 'bg-primary text-white'
                 : 'bg-white text-gray-700 border border-gray-200 hover:border-primary'
@@ -59,7 +60,7 @@ export default function ProductGallery() {
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-3 py-2 rounded-lg font-semibold border transition-colors ${
+              className={`px-3 py-1 rounded-lg font-semibold border transition-colors ${
                 selectedCategory === category.id
                   ? 'bg-primary text-white border-primary'
                   : 'bg-white text-gray-700 border-gray-200 hover:border-primary'
@@ -81,10 +82,13 @@ export default function ProductGallery() {
               {/* Изображение продукта */}
               <div className="aspect-square bg-accent rounded-lg mb-1 overflow-hidden">
                 {product.image ? (
-                  <img
+                  <Image
                     src={product.image}
                     alt={product.name}
+                    width={400}
+                    height={400}
                     className="w-full h-full object-cover"
+                    priority={false}
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center">

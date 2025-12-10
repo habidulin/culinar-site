@@ -37,10 +37,10 @@ export default function About() {
           {/* Правая колонка - контент */}
           <div className="space-y-4">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-2 py-2 rounded-full mb-2">
+            {/* <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-2 py-2 rounded-full mb-2">
               <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
               <span className="text-sm font-medium text-gray-700">Unsere Geschichte</span>
-            </div>
+            </div> */}
 
             {/* Заголовок */}
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">

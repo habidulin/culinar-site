@@ -164,6 +164,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
                 {/* Левая колонка - товары */}
                 <div>
                   <h3 className="font-bold text-lg mb-2">Ihre Bestellung</h3>
@@ -199,6 +200,26 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                       <span>{finalPrice.toFixed(2)} €</span>
                     </div>
                   </div>
+
+                  <div className="border-t mt-4 pt-4 space-y-2">
+
+                    <div className="p-2 bg-gray-50 rounded-lg border border-gray-200 mb-2">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="text-lg">💳</span>
+                        <div>
+                          <div className="font-medium text-sm">Zahlungsmethode</div>
+                          <div className="text-xs text-gray-600">
+                            {deliveryMethod === 'delivery' 
+                              ? 'Sie können bar an unseren Kurier bei Lieferung bezahlen.'
+                              : 'Bezahlung vor Ort bei Abholung in Bar oder mit Karte.'
+                            }
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
                 </div>
 
                 {/* Правая колонка - форма */}

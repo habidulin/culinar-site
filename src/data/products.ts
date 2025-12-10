@@ -53,21 +53,27 @@ export const allProducts: Product[] = [
     name: 'Sportler Kumpir',
     category: 'kumpir',
     price: '4,99 €',
-    description: 'Traditionell gefüllte Ofenkartoffel'
+    description: 'Traditionell gefüllte Ofenkartoffel',
+    isHighlight: true,
+    image: '/products/kumpir.jpg'
   },
   {
     id: 'kumpir-avocado',
     name: 'Avocado Kumpir',
     category: 'kumpir',
     price: '7,50 €',
-    description: 'Mit frischer Avocado und Gemüse'
+    description: 'Mit frischer Avocado und Gemüse',
+    isHighlight: true,
+    image: '/products/kumpir.jpg'
   },
   {
     id: 'kumpir-spezial',
     name: 'Culinar Kumpir',
     category: 'kumpir',
     price: '7,00 €',
-    description: 'Unsere Haus-Spezialität'
+    description: 'Unsere Haus-Spezialität',
+    isHighlight: true,
+    image: '/products/kumpir.jpg'
   },
 
   // ANTIPASTI & CREMES
@@ -76,21 +82,27 @@ export const allProducts: Product[] = [
     name: 'Avocado Creme',
     category: 'antipasti',
     price: '2,70 €',
-    description: 'Frische Avocado-Creme (pro 100g)'
+    description: 'Frische Avocado-Creme (pro 100g)',
+    isHighlight: true,
+    image: '/products/avocado.jpg'
   },
   {
     id: 'roter-grieche',
     name: 'Roter Grieche',
     category: 'antipasti',
     price: '2,70 €',
-    description: 'Mediterrane Paprika-Creme (pro 100g)'
+    description: 'Mediterrane Paprika-Creme (pro 100g)',
+    isHighlight: true,
+    image: '/products/roter.jpg'
   },
   {
     id: 'walnuss-feigen-creme',
     name: 'Walnuss-Feigen Creme',
     category: 'antipasti',
     price: '2,70 €',
-    description: 'Süß-würzige Feigencreme (pro 100g)'
+    description: 'Süß-würzige Feigencreme (pro 100g)',
+    isHighlight: true,
+    image: '/products/walnuss.jpg'
   },
 
   // OLIVEN
@@ -99,21 +111,27 @@ export const allProducts: Product[] = [
     name: 'Oliven mit Mandeln',
     category: 'oliven',
     price: '2,30 €',
-    description: 'Gefüllt mit Mandeln (pro 100g)'
+    description: 'Gefüllt mit Mandeln (pro 100g)',
+    isHighlight: true,
+    image: '/products/mandeln.jpg'
   },
   {
     id: 'oliven-knoblauch',
     name: 'Oliven mit Knoblauch',
     category: 'oliven',
     price: '2,30 €',
-    description: 'Intensiv mit Knoblauch (pro 100g)'
+    description: 'Intensiv mit Knoblauch (pro 100g)',
+    isHighlight: true,
+    image: '/products/knoblauch.jpg'
   },
   {
     id: 'schwarze-oliven',
     name: 'Schwarze Oliven ohne Kern',
     category: 'oliven',
     price: '2,10 €',
-    description: 'Eingelegt, kernlos (pro 100g)'
+    description: 'Eingelegt, kernlos (pro 100g)',
+    isHighlight: true,
+    image: '/products/kern.jpg'
   }
 ]
 

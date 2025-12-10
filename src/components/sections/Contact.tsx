@@ -6,10 +6,10 @@ export default function Contact() {
         {/* Заголовок */}
         <div className="text-center mb-8">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full mb-4">
+          {/* <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full mb-4">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             <span className="text-sm font-medium text-gray-700">Besuchen Sie uns</span>
-          </div>
+          </div> */}
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-2">
             Kontakt & Standort
           </h2>
@@ -18,8 +18,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 max-w-6xl mx-auto">
           {/* Форма */}
           <div className="bg-white rounded-xl p-3 border border-gray-200">
             <h3 className="text-2xl font-bold text-primary mb-6">Schreiben Sie uns</h3>
@@ -75,23 +74,23 @@ export default function Contact() {
           </div>
 
           {/* Контакты */}
-          <div className="space-y-6">
+          {/* <div className="space-y-6">
             {[
-              {
-                icon: '📍',
-                title: 'Adresse',
-                content: 'Babelsberg Straße 16, 14473 Potsdam'
-              },
-              {
-                icon: '📞',
-                title: 'Telefon',
-                content: '+49 176 6385 6269'
-              },
-              {
-                icon: '✉️',
-                title: 'E-Mail',
-                content: 'info@culinar-baklava.de'
-              },
+              // {
+              //   icon: '📍',
+              //   title: 'Adresse',
+              //   content: 'Babelsberg Straße 16, 14473 Potsdam'
+              // },
+              // {
+              //   icon: '📞',
+              //   title: 'Telefon',
+              //   content: '+49 176 6385 6269'
+              // },
+              // {
+              //   icon: '✉️',
+              //   title: 'E-Mail',
+              //   content: 'info@culinar-baklava.de'
+              // },
               {
                 icon: '🕒',
                 title: 'Öffnungszeiten',
@@ -113,29 +112,13 @@ export default function Contact() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Карта */}
-        {/* <div className="mt-12 bg-white rounded-xl p-4 border border-gray-200 max-w-6xl mx-auto">
+        <div className="mt-6 bg-white rounded-xl p-4 border border-gray-200 max-w-6xl mx-auto">
           <h4 className="font-bold text-gray-900 mb-4 text-lg">So finden Sie uns</h4>
-          <div className="h-64 rounded-lg overflow-hidden border border-gray-200">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d152.17420165274828!2d13.0674627!3d52.3924074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8f5c23d850f45%3A0xbadf974c6cb4e4f1!2sCulinar%20Baklava%20und%20Feinkost!5e0!3m2!1sru!2sde!4v1765283691152!5m2!1sru!2sde"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Culinar Baklava auf Google Maps"
-            />
-          </div>
-        </div> */}
-
-        <div className="mt-12 bg-white rounded-xl p-4 border border-gray-200 max-w-6xl mx-auto">
-          <h4 className="font-bold text-gray-900 mb-4 text-lg">So finden Sie uns</h4>
-          <div className="h-64 rounded-lg overflow-hidden border border-gray-200">
+          <div className="h-96 rounded-lg overflow-hidden border border-gray-200">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d152.17420165274828!2d13.0674627!3d52.3924074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8f5c23d850f45%3A0xbadf974c6cb4e4f1!2sCulinar%20Baklava%20und%20Feinkost!5e0!3m2!1sru!2sde!4v1765283691152!5m2!1sru!2sde"
               width="100%"

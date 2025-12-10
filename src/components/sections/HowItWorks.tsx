@@ -30,10 +30,10 @@ export default function HowItWorks() {
       <div className="container mx-auto px-2">
         <div className="text-center mb-8">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full mb-2">
+          {/* <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full mb-2">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             <span className="text-sm font-medium text-gray-700">Einfach & Schnell</span>
-          </div>
+          </div> */}
 
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-2">
             So einfach bestellen Sie
