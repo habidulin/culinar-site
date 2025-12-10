@@ -164,7 +164,7 @@ export const featuredProducts: Product[] = [
     id: '1',
     name: 'Pistazien Baklava',
     category: 'baklava',
-    price: 'Ab 12,99 €',
+    price: 'Ab 11,99 €',
     description: 'Hochwertige Pistazien in hauchdünnem Teig',
     isHighlight: true
   },
