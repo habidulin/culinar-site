@@ -3,7 +3,7 @@ import { Heart, Clock, Users, Award } from 'lucide-react';
 export default function Benefits() {
   return (
     <section className="py-10 bg-white">
-      <div className="container mx-auto px-2 text-center">
+      <div className="container mx-auto px-3 text-center">
         {/* Badge */}
         {/* <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-2 py-2 rounded-full mb-2">
           <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>

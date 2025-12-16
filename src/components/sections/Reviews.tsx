@@ -25,7 +25,7 @@ export default function Reviews() {
     },
     {
       id: 4,
-      name: 'Markus Hoffmann',
+      name: 'Markus Hofman',
       rating: 5,
       text: 'Der Kumpir ist der Hammer! Frische Zutaten und mega Geschmack. Immer wieder!',
       verified: true
@@ -48,7 +48,7 @@ export default function Reviews() {
 
   return (
     <section className="py-20 bg-white">
-      <div className="container mx-auto px-2">
+      <div className="container mx-auto px-3">
         
         {/* Заголовок */}
         <div className="text-center mb-8">
@@ -72,7 +72,7 @@ export default function Reviews() {
               key={review.id}
               className="bg-white rounded-xl p-2 border border-gray-200 hover:border-primary transition-colors"
             >
-              <div className="flex items-center gap-3 mb-2">
+              <div className="flex items-center gap-2 mb-1">
                 <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-sm">
                     {review.name.split(' ').map(n => n[0]).join('')}
@@ -82,7 +82,7 @@ export default function Reviews() {
                   <div className="font-bold text-gray-900">{review.name}</div>
                   <div className="flex items-center gap-2">
                     <div className="flex text-amber-500">
-                      {'⭐'.repeat(review.rating)}
+                      {'★'.repeat(review.rating)}
                     </div>                  </div>
                 </div>
               </div>

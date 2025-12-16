@@ -27,7 +27,7 @@ export default function ProductGallery() {
 
   return (
     <section id="ProductGallery" className="py-20 bg-white">
-      <div className="container mx-auto px-2">
+      <div className="container mx-auto px-3">
 
         {/* Заголовок секции */}
         <div className="text-center mb-8">

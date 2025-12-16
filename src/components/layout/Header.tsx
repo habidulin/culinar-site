@@ -13,9 +13,15 @@ export default function Header() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
+      // Закрываем меню при скролле
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         // Скролл вниз - скрываем
         setIsVisible(false);
+
       } else if (currentScrollY < lastScrollY) {
         // Скролл вверх - показываем
         setIsVisible(true);
@@ -26,23 +32,23 @@ export default function Header() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, isMenuOpen]);
 
   return (
-    <header className={`border-b border-gray-200 bg-white sticky top-0 z-50 transition-transform duration-300 ${
+    <header className={`bg-white/30 backdrop-blur-md sticky top-0 z-50 transition-transform duration-300 ${
       isVisible ? 'translate-y-0' : '-translate-y-full'
     }`}>
-      <div className="container mx-auto px-2">
+      <div className="container mx-auto px-3 py-1">
         <div className="flex items-center justify-between">
           {/* Гамбургер для мобильных */}
-          <div className="md:hidden">
+          <div className="md:hidden ">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2"
+              className="p-3"
             >
-              <div className={`w-6 h-0.5 bg-gray-600 mb-1 transition-transform ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></div>
-              <div className={`w-6 h-0.5 bg-gray-600 mb-1 ${isMenuOpen ? 'opacity-0' : ''}`}></div>
-              <div className={`w-6 h-0.5 bg-gray-600 transition-transform ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></div>
+              <div className={`w-8 h-0.5 bg-gray-600 mb-1.5 transition-transform ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
+              <div className={`w-8 h-0.5 bg-gray-600 mb-1.5 ${isMenuOpen ? 'opacity-0' : ''}`}></div>
+              <div className={`w-8 h-0.5 bg-gray-600 transition-transform ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
             </button>
           </div>
 

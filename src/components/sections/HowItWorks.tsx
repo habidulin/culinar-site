@@ -27,7 +27,7 @@ export default function HowItWorks() {
 
   return (
     <section className="py-20 bg-background">
-      <div className="container mx-auto px-2">
+      <div className="container mx-auto px-3">
         <div className="text-center mb-8">
           {/* Badge */}
           {/* <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full mb-2">

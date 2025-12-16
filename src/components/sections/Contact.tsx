@@ -1,7 +1,7 @@
 export default function Contact() {
   return (
     <section id="contact" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-2">
 
         {/* Заголовок */}
         <div className="text-center mb-8">
@@ -20,13 +20,13 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 max-w-6xl mx-auto">
           {/* Форма */}
-          <div className="bg-white rounded-xl p-3 border border-gray-200">
+          <div className="bg-white rounded-xl p-2 border border-gray-200">
             <h3 className="text-2xl font-bold text-primary mb-6">Schreiben Sie uns</h3>
 
-            <form className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <form className="space-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-gray-700 mb-2 font-medium">Name *</label>
+                  <label className="block text-gray-700 mb-1 font-medium">Name *</label>
                   <input
                     type="text"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none"
@@ -35,7 +35,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 mb-2 font-medium">E-Mail *</label>
+                  <label className="block text-gray-700 mb-1 font-medium">E-Mail *</label>
                   <input
                     type="email"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none"
@@ -46,7 +46,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-gray-700 mb-2 font-medium">Betreff</label>
+                <label className="block text-gray-700 mb-1 font-medium">Betreff</label>
                 <input
                   type="text"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none"
@@ -55,7 +55,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-gray-700 mb-2 font-medium">Nachricht *</label>
+                <label className="block text-gray-700 mb-1 font-medium">Nachricht *</label>
                 <textarea
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none"
@@ -116,19 +116,16 @@ export default function Contact() {
         </div>
 
         {/* Карта */}
-        <div className="mt-6 bg-white rounded-xl p-4 border border-gray-200 max-w-6xl mx-auto">
+        <div className="mt-6 bg-white rounded-xl p-2 border border-gray-200 max-w-6xl mx-auto">
           <h4 className="font-bold text-gray-900 mb-4 text-lg">So finden Sie uns</h4>
           <div className="h-96 rounded-lg overflow-hidden border border-gray-200">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d152.17420165274828!2d13.0674627!3d52.3924074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8f5c23d850f45%3A0xbadf974c6cb4e4f1!2sCulinar%20Baklava%20und%20Feinkost!5e0!3m2!1sru!2sde!4v1765283691152!5m2!1sru!2sde"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d152.17420165274828!2d13.0674627!3d52.3924074!3m2!1i1024!2i768!4f145!3m3!1m2!1s0x47a8f5c23d850f45%3A0xbadf974c6cb4e4f1!2sCulinar%20Baklava%20und%20Feinkost!5e0!3m2!1sru!2sde!4v1765283691152!5m2!1sru!2sde"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Culinar Baklava auf Google Maps"
-              aria-label="Google Maps Karte mit Standort von Culinar Baklava"
             />
           </div>
         </div>

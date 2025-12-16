@@ -3,7 +3,7 @@ import { productCategories } from '@/data/products'
 export default function ProductCategories() {
   return (
     <section id="products" className="py-20 bg-white">
-      <div className="container mx-auto px-2">
+      <div className="container mx-auto px-3">
         
         {/* Заголовок секции */}
         <div className="text-center mb-8">
@@ -26,8 +26,7 @@ export default function ProductCategories() {
             <div
               key={category.id}
               className="group bg-white rounded-xl p-2 border border-gray-200 hover:border-primary transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col"
-            >
-              
+            > 
               {/* Бейдж для главной категории */}
               {/* {category.isHighlight && (
                 <div className="inline-block bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold mb-2">

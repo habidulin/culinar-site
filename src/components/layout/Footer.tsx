@@ -1,7 +1,12 @@
+"use client";
+
+import logo from '@/assets/logo.png';
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="bg-gray-50 border-t border-gray-200">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-3 py-6">
         
         {/* Для мобильных - вертикально, для десктопа - горизонтально */}
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
@@ -9,10 +14,16 @@ export default function Footer() {
           {/* Лого и описание */}
           <div className="lg:w-1/3">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-lg"></div>
-              <div>
-                <div className="font-bold text-xl text-gray-900">Culinar Baklava</div>
-                <div className="text-sm text-gray-600">& Feinkost</div>
+              {/* Логотип */}
+              <div className="flex flex-col items-center">
+                <Image
+                  src={logo}
+                  alt="Culinar"
+                  width={119}
+                  height={119}
+                  className="object-contain"
+                />
+                <div className="text-xs text-gray-600">Baklava & Feinkost</div>
               </div>
             </div>
             <p className="text-gray-600 mb-4">
@@ -29,7 +40,7 @@ export default function Footer() {
                 <h3 className="font-semibold text-gray-900 mb-3">Kontakt</h3>
                 <div className="space-y-2 text-gray-600">
                   <div>📍 Potsdam, Germany</div>
-                  <div>📞 0331 2730 8229</div>
+                  <div>📞 0176 6385 6269</div>
                   <div>✉️ info@culinar-baklava.de</div>
                 </div>
               </div>

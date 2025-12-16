@@ -1,4 +1,5 @@
 import { HandHeart, Star, Heart } from 'lucide-react';
+import Image from 'next/image';
 
 export default function About() {
   const values = [
@@ -21,17 +22,43 @@ export default function About() {
 
   return (
     <section id="about" className="py-20 bg-white">
-      <div className="container mx-auto px-2">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-3">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
           
           {/* Левая колонка - изображение */}
-          <div className="bg-white rounded-xl p-4 border border-gray-200">
-            <div className="aspect-video bg-accent rounded-lg flex items-center justify-center">
+          <div className="bg-white rounded-xl p-2 border border-gray-200">
+
+            {/* <div className="aspect-video rounded-lg overflow-hidden">
+              <Image
+                src="/about.jpg"
+                alt="Familientradition Culinar Baklava"
+                width={800}
+                height={450}
+                className="w-full h-full object-cover"
+              />
+            </div> */}
+
+            <div className="aspect-video rounded-lg overflow-hidden relative">
+              <Image
+                src="/about.jpg"
+                alt="Familientradition Culinar Baklava"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-white/40 backdrop-blur-sm p-1 text-center">
+                <p className="font-semibold text-primary">
+                  Familientradition seit 1995
+                </p>
+              </div>
+            </div>
+
+            {/* <div className="aspect-video bg-accent rounded-lg flex items-center justify-center">
               <div className="text-center">
                 <span className="text-6xl">👨‍👩‍👧‍👦</span>
                 <p className="text-lg font-semibold text-primary mt-4">Familientradition seit 1995</p>
               </div>
-            </div>
+            </div> */}
+
           </div>
 
           {/* Правая колонка - контент */}

@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section id="home" className="relative h-[60vh] md:h-[60vh] flex items-center justify-center">
+    <section id="home" className="relative h-[65vh] md:h-[60vh] flex items-center justify-center">
 
       {/* Видео фон */}
       <div className="absolute inset-0 z-0">
@@ -17,7 +17,7 @@ export default function Hero() {
       </div>
 
       {/* Контент поверх видео */}
-      <div className="container mx-auto px-2 relative z-10">
+      <div className="container mx-auto px-3 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -30,12 +30,12 @@ export default function Hero() {
             Tradition, Geschmack, Qualität
           </p>
           
-          <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="hidden sm:block text-lg text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
             Handgemachte Baklava, frische Feinkost, Antipasti, Oliven und hausgemachte Spezialitäten – 
             direkt aus unserer Familie für Sie.
           </p>
           
-          <div className="grid grid-cols-3 md:grid-cols-3 gap-3 max-w-2xl mx-auto">
+          <div className="hidden sm:grid sm:grid-cols-3 gap-3 max-w-2xl mx-auto">
             {[
               { value: 'Frische', label: 'Täglich produziert' },
               { value: '100%', label: 'Handgemacht' },
