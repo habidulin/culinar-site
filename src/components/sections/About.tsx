@@ -45,7 +45,7 @@ export default function About() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-white/40 backdrop-blur-sm p-1 text-center">
+              <div className="absolute bottom-0 left-0 right-0 bg-white/60 backdrop-blur-sm p-1 text-center">
                 <p className="font-semibold text-primary">
                   Familientradition seit 1995
                 </p>
