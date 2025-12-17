@@ -96,7 +96,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
               </div>
             </div>
 
-            <div className="p-6">
+            <div className="p-3">
               {/* Выбор способа получения */}
               <div className="mb-6">
                 <h3 className="font-bold text-lg mb-4">Wie möchten Sie Ihre Bestellung erhalten?</h3>
