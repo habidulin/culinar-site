@@ -49,17 +49,13 @@ export default function Footer() {
               <div>
                 <h3 className="font-semibold text-gray-900 mb-3">Öffnungszeiten</h3>
                 <div className="space-y-1 text-gray-600">
-                  <div className="flex justify-between">
-                    <span>Mo–Fr:</span>
-                    <span className="font-medium">10:00–19:00</span>
+                  <div className="flex">
+                    <span className="w-24">Mo–Sa:</span>
+                    <span className="font-medium">9:00–21:00</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span>Sa:</span>
-                    <span className="font-medium">10:00–18:00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>So:</span>
-                    <span className="font-medium">11:00–17:00</span>
+                  <div className="flex">
+                    <span className="w-24">Sonntag:</span>
+                    <span className="font-medium">Geschlossen</span>
                   </div>
                 </div>
               </div>
