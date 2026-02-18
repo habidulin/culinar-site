@@ -104,6 +104,30 @@ export const allProducts: Product[] = [
     isHighlight: true,
     image: '/products/walnuss.jpg'
   },
+  {
+    id: 'grune-gerieche',
+    name: 'Grune Gerieche',
+    category: 'antipasti',
+    price: '2,70 €',
+    description: '(pro 100g)',
+    image: '/products/grune.jpg'
+  },
+  {
+    id: 'tomaten-creme',
+    name: 'Tomaten Creme',
+    category: 'antipasti',
+    price: '2,50 €',
+    description: '(pro 100g)',
+    image: '/products/tomaten.jpg'
+  },
+  {
+    id: 'zaziki',
+    name: 'Zaziki',
+    category: 'antipasti',
+    price: '2,10 €',
+    description: '(pro 100g)',
+    image: '/products/zaziki.jpg'
+  },
 
   // OLIVEN
   {
@@ -125,13 +149,31 @@ export const allProducts: Product[] = [
     image: '/products/knoblauch.jpg'
   },
   {
-    id: 'schwarze-oliven',
-    name: 'Schwarze Oliven ohne Kern',
+    id: 'chili-oliven',
+    name: 'Grüne Oliven mit Chili',
     category: 'oliven',
     price: '2,10 €',
     description: 'Eingelegt, kernlos (pro 100g)',
     isHighlight: true,
-    image: '/products/kern.jpg'
+    image: '/products/chili.jpg'
+  },
+  {
+    id: 'schwarze-oliven',
+    name: 'Eingelegte Schwarze Oliven',
+    category: 'oliven',
+    price: '2,10 €',
+    description: '(pro 100g)',
+    isHighlight: true,
+    image: '/products/eingelegte.jpg'
+  },
+  {
+    id: 'natur-oliven',
+    name: 'Oliven Grüne Natur',
+    category: 'oliven',
+    price: '1,80 €',
+    description: 'Eingelegt, kernlos (pro 100g)',
+    isHighlight: true,
+    image: '/products/natur.jpg'
   }
 ]
 

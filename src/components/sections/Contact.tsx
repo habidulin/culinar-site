@@ -89,7 +89,7 @@ export default function Contact() {
               // {
               //   icon: '✉️',
               //   title: 'E-Mail',
-              //   content: 'info@culinar-baklava.de'
+              //   content: 'culinar.potsdam@gmx.de'
               // },
               {
                 icon: '🕒',

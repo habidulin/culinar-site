@@ -151,11 +151,11 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                           <span className="text-2xl">🚗</span>
                           <div>
                             <div className="font-bold text-gray-900">Lieferung</div>
-                            <div className="text-sm text-gray-600">+3,50 € • 30-45 Minuten</div>
+                            <div className="text-sm text-gray-600">ab 45€ • 30-45 Minuten</div>
                           </div>
                         </div>
                         <div className="text-xs text-gray-500 mt-2">
-                          Innerhalb von 5km um Potsdam
+                          Innerhalb von 20km um Potsdam
                         </div>
                       </div>
                     </div>
@@ -209,7 +209,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                         <div>
                           <div className="font-medium text-sm">Zahlungsmethode</div>
                           <div className="text-xs text-gray-600">
-                            {deliveryMethod === 'delivery' 
+                            {deliveryMethod === 'delivery'
                               ? 'Sie können bar an unseren Kurier bei Lieferung bezahlen.'
                               : 'Bezahlung vor Ort bei Abholung in Bar oder mit Karte.'
                             }

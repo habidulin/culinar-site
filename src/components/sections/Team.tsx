@@ -18,12 +18,11 @@ export default function Team() {
       photo: '/team2.jpg'
     },
     {
-      id: 3, 
+      id: 3,
       name: 'Ahmet Demir',
       role: 'Baklava-Meister',
       description: 'Beherrscht die traditionelle Kunst der Baklava-Herstellung wie kaum ein anderer.',
       experience: '18+ Jahre',
-      photo: '/team3.jpg'
     }
   ]
 
@@ -41,7 +40,7 @@ export default function Team() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {teamMembers.map((member) => (
-            <div 
+            <div
               key={member.id}
               className="bg-white rounded-xl p-2 text-center border border-gray-200 hover:border-primary transition-all duration-300 hover:-translate-y-1"
             >
@@ -60,11 +59,11 @@ export default function Team() {
               <h3 className="text-lg font-bold text-gray-900 mb-2">
                 {member.name}
               </h3>
-              
+
               <div className="bg-accent text-gray-700 px-3 py-1 rounded-full text-sm font-semibold inline-block mb-2">
                 {member.role}
               </div>
-              
+
               <p className="text-gray-600 mb-2 text-sm leading-relaxed">
                 {member.description}
               </p>
