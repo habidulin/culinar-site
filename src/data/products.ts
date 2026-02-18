@@ -105,8 +105,8 @@ export const allProducts: Product[] = [
     image: '/products/walnuss.jpg'
   },
   {
-    id: 'grune-gerieche',
-    name: 'Grune Gerieche',
+    id: 'grune-grieche',
+    name: 'Grüner Grieche',
     category: 'antipasti',
     price: '2,70 €',
     description: '(pro 100g)',
@@ -203,7 +203,7 @@ export const productCategories = [
 
 export const featuredProducts: Product[] = [
   {
-    id: '1',
+    id: 'featured-pistazie-baklava',
     name: 'Pistazien Baklava',
     category: 'baklava',
     price: 'Ab 11,99 €',
@@ -211,14 +211,14 @@ export const featuredProducts: Product[] = [
     isHighlight: true
   },
   {
-    id: '2',
+    id: 'featured-gemischte-baklava',
     name: 'Gemischte Baklava',
     category: 'baklava',
     price: 'Ab 15,99 €',
     description: 'Vielfalt unserer Baklava-Spezialitäten'
   },
   {
-    id: '3',
+    id: 'featured-feinkost-paket',
     name: 'Feinkost Paket',
     category: 'antipasti',
     price: 'Ab 24,99 €',
