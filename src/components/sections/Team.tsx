@@ -48,7 +48,7 @@ export default function Team() {
 
               <div className="relative w-36 h-36 mx-auto rounded-xl border-1 border-accent overflow-hidden">
                 <Image
-                  src={member.photo}
+                  src={member.photo || '/team-placeholder.jpg'}
                   alt={member.name}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
