@@ -8,6 +8,7 @@ export interface CartItem {
   price: string
   quantity: number
   category: string
+  weight?: string
 }
 
 interface CartContextType {
@@ -40,13 +41,20 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   const addToCart = (product: Omit<CartItem, 'quantity'>) => {
     setItems(prev => {
-      const existing = prev.find(item => item.id === product.id)
+      // Создаем уникальный ключ с учетом веса
+      const itemKey = product.weight ? `${product.id}-${product.weight}` : product.id
+      const existing = prev.find(item => {
+        const existingKey = item.weight ? `${item.id}-${item.weight}` : item.id
+        return existingKey === itemKey
+      })
+      
       if (existing) {
-        return prev.map(item =>
-          item.id === product.id 
+        return prev.map(item => {
+          const existingKey = item.weight ? `${item.id}-${item.weight}` : item.id
+          return existingKey === itemKey
             ? { ...item, quantity: item.quantity + 1 }
             : item
-        )
+        })
       }
       return [...prev, { ...product, quantity: 1 }]
     })

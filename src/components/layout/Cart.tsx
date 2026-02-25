@@ -72,37 +72,43 @@ export default function Cart({ onOpenCheckout }: CartProps) {
             </div>
           ) : (
             <div className="space-y-2">
-              {items.map(item => (
-                <div key={item.id} className="flex items-center gap-3 bg-accent rounded-lg p-2 border border-primary/10">
-                  <div className="flex-1">
-                    <h3 className="font-medium text-gray-900">{item.name}</h3>
-                    <p className="text-primary font-semibold">{item.price}</p>
-                  </div>
+              {items.map(item => {
+                const itemKey = item.weight ? `${item.id}-${item.weight}` : item.id
+                return (
+                  <div key={itemKey} className="flex items-center gap-3 bg-accent rounded-lg p-2 border border-primary/10">
+                    <div className="flex-1">
+                      <h3 className="font-medium text-gray-900">
+                        {item.name}
+                        {item.weight && <span className="text-sm text-gray-600 ml-1">({item.weight})</span>}
+                      </h3>
+                      <p className="text-primary font-semibold">{item.price}</p>
+                    </div>
 
-                  <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => updateQuantity(itemKey, item.quantity - 1)}
+                        className="w-8 h-8 bg-white border border-gray-200 rounded-full hover:border-gray-300 transition-colors"
+                      >
+                        -
+                      </button>
+                      <span className="font-semibold w-8 text-center">{item.quantity}</span>
+                      <button
+                        onClick={() => updateQuantity(itemKey, item.quantity + 1)}
+                        className="w-8 h-8 bg-white border border-gray-200 rounded-full hover:border-gray-300 transition-colors"
+                      >
+                        +
+                      </button>
+                    </div>
+
                     <button
-                      onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                      className="w-8 h-8 bg-white border border-gray-200 rounded-full hover:border-gray-300 transition-colors"
+                      onClick={() => removeFromCart(itemKey)}
+                      className="text-gray-400 hover:text-red-500 transition-colors"
                     >
-                      -
-                    </button>
-                    <span className="font-semibold w-8 text-center">{item.quantity}</span>
-                    <button
-                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                      className="w-8 h-8 bg-white border border-gray-200 rounded-full hover:border-gray-300 transition-colors"
-                    >
-                      +
+                      🗑️
                     </button>
                   </div>
-
-                  <button
-                    onClick={() => removeFromCart(item.id)}
-                    className="text-gray-400 hover:text-red-500 transition-colors"
-                  >
-                    🗑️
-                  </button>
-                </div>
-              ))}
+                )
+              })}
             </div>
           )}
         </div>

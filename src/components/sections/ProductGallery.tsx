@@ -7,21 +7,102 @@ import { allProducts } from '@/data/products'
 import { useCart } from '@/context/CartContext'
 import { Product } from '@/data/products'
 
+interface WeightSelectorProps {
+  product: Product;
+  selectedWeight: string;
+  selectedPrice: string;
+  onWeightChange: (weight: string, price: string) => void;
+}
+
+function WeightSelector({ product, selectedWeight, selectedPrice, onWeightChange }: WeightSelectorProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  if (!product.weightOptions || product.weightOptions.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-1 text-lg font-medium text-primary hover:text-secondary transition-colors"
+      >
+        {selectedWeight}
+        <svg
+          className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      {isOpen && (
+        <>
+          <div
+            className="fixed inset-0 z-10"
+            onClick={() => setIsOpen(false)}
+          />
+          <div className="absolute left-0 top-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-20 min-w-[120px]">
+            {product.weightOptions.map((option) => (
+              <button
+                key={option.weight}
+                onClick={() => {
+                  onWeightChange(option.weight, option.price);
+                  setIsOpen(false);
+                }}
+                className={`w-full px-3 py-2 text-left text-sm hover:bg-gray-50 first:rounded-t-lg last:rounded-b-lg ${
+                  selectedWeight === option.weight ? 'bg-gray-50 font-semibold' : ''
+                }`}
+              >
+                <div className="flex justify-between items-center gap-2">
+                  <span>{option.weight}</span>
+                  <span className="text-primary font-semibold">{option.price}</span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
 
 export default function ProductGallery() {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [productWeights, setProductWeights] = useState<Record<string, { weight: string; price: string }>>({});
   const { addToCart } = useCart();
 
   const filteredProducts = selectedCategory === 'all'
     ? allProducts
     : allProducts.filter(product => product.category === selectedCategory);
 
+  const getProductWeight = (productId: string, product: Product) => {
+    if (!productWeights[productId] && product.weightOptions && product.weightOptions.length > 0) {
+      return {
+        weight: product.weightOptions[0].weight,
+        price: product.weightOptions[0].price
+      };
+    }
+    return productWeights[productId] || { weight: '', price: product.price };
+  };
+
+  const handleWeightChange = (productId: string, weight: string, price: string) => {
+    setProductWeights(prev => ({
+      ...prev,
+      [productId]: { weight, price }
+    }));
+  };
+
   const handleAddToCart = (product: Product) => {
+    const { weight, price } = getProductWeight(product.id, product);
     addToCart({
       id: product.id,
       name: product.name,
-      price: product.price,
-      category: product.category
+      price: price,
+      category: product.category,
+      weight: weight || undefined
     });
   };
 
@@ -103,7 +184,7 @@ export default function ProductGallery() {
               </div>
 
               {/* Информация о продукте */}
-              <div className="space-y-3 flex flex-col flex-grow">
+              <div className="space-y-1 flex flex-col flex-grow">
                 <h3 className="font-semibold text-lg text-gray-900">
                   {product.name}
                 </h3>
@@ -112,14 +193,22 @@ export default function ProductGallery() {
                   {product.description}
                 </p>
 
-                <div className="flex items-center justify-between pt-1">
-                  <div className="text-lg font-bold text-primary">
-                    {product.price}
+                <div className="space-y-3 pt-1">
+                  <div className="flex items-center gap-4">
+                    <div className="text-lg font-bold text-primary">
+                      {getProductWeight(product.id, product).price}
+                    </div>
+                    <WeightSelector
+                      product={product}
+                      selectedWeight={getProductWeight(product.id, product).weight}
+                      selectedPrice={getProductWeight(product.id, product).price}
+                      onWeightChange={(weight, price) => handleWeightChange(product.id, weight, price)}
+                    />
                   </div>
 
                   <button
                     onClick={() => handleAddToCart(product)}
-                    className="bg-primary text-white px-2 py-1 text-sm rounded-lg hover:bg-secondary transition-colors font-semibold"
+                    className="w-full bg-primary text-white px-2 py-1 text-sm rounded-lg hover:bg-secondary transition-colors font-semibold"
                   >
                     Bestellen
                   </button>

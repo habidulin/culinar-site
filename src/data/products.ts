@@ -1,3 +1,8 @@
+export interface WeightOption {
+  weight: string
+  price: string
+}
+
 export interface Product {
   id: string
   name: string
@@ -6,6 +11,7 @@ export interface Product {
   description: string
   image?: string
   isHighlight?: boolean
+  weightOptions?: WeightOption[]
 }
 
 export const allProducts: Product[] = [
@@ -15,36 +21,56 @@ export const allProducts: Product[] = [
     name: 'Pistazien Baklava',
     category: 'baklava',
     price: '3,50 €',
-    description: 'Hochwertige Antep-Pistazien (pro 100g)',
+    description: 'Hochwertige Antep-Pistazien',
     isHighlight: true,
-    image: '/products/pistazien.jpg'
+    image: '/products/pistazien.jpg',
+    weightOptions: [
+      { weight: '100g', price: '3,50 €' },
+      { weight: '1kg', price: '30,00 €' },
+      { weight: '4kg', price: '90,00 €' }
+    ]
   },
   {
     id: 'walnuss-baklava',
     name: 'Walnuss Baklava',
     category: 'baklava',
     price: '3,00 €',
-    description: 'Aromatische Walnüsse (pro 100g)',
+    description: 'Aromatische Walnüsse',
     isHighlight: true,
-    image: '/products/cevizl.jpg'
+    image: '/products/cevizl.jpg',
+    weightOptions: [
+      { weight: '100g', price: '3,00 €' },
+      { weight: '1kg', price: '25,00 €' },
+      { weight: '4kg', price: '80,00 €' }
+    ]
   },
   {
     id: 'fistik-sarma',
     name: 'Fistik Sarma mit Pistazien',
     category: 'baklava',
     price: '3,00 €',
-    description: 'Fein gerollt mit Pistazien (pro 100g)',
+    description: 'Fein gerollt mit Pistazien',
     isHighlight: true,
-    image: '/products/sarma.jpg'
+    image: '/products/sarma.jpg',
+    weightOptions: [
+      { weight: '100g', price: '3,70 €' },
+      { weight: '1kg', price: '32,00 €' },
+      { weight: '4kg', price: '95,00 €' }
+    ]
   },
   {
     id: 'kadayif',
     name: 'Kadayif',
     category: 'baklava',
     price: '3,50 €',
-    description: 'Feine Teigfäden mit Nüssen (pro 100g)',
+    description: 'Feine Teigfäden mit Nüssen',
     isHighlight: true,
-    image: '/products/kadayif.jpg'
+    image: '/products/kadayif.jpg',
+    weightOptions: [
+      { weight: '100g', price: '3,50 €' },
+      { weight: '1kg', price: '30,00 €' },
+      { weight: '4kg', price: '90,00 €' }
+    ]
   },
 
   // KUMPIR VARIATIONEN

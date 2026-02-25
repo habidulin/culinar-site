@@ -1,4 +1,34 @@
+"use client"
+
+import { useState } from 'react'
+
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setStatus('loading')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        setFormData({ name: '', email: '', subject: '', message: '' })
+        setTimeout(() => setStatus('idle'), 5000)
+      } else {
+        setStatus('error')
+      }
+    } catch (error) {
+      setStatus('error')
+    }
+  }
+
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-2">
@@ -23,12 +53,14 @@ export default function Contact() {
           <div className="bg-white rounded-xl p-2 border border-gray-200">
             <h3 className="text-2xl font-bold text-primary mb-6">Schreiben Sie uns</h3>
 
-            <form className="space-y-3">
+            <form onSubmit={handleSubmit} className="space-y-3">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-gray-700 mb-1 font-medium">Name *</label>
                   <input
                     type="text"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none"
                     placeholder="Ihr Name"
                     required
@@ -38,6 +70,8 @@ export default function Contact() {
                   <label className="block text-gray-700 mb-1 font-medium">E-Mail *</label>
                   <input
                     type="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none"
                     placeholder="ihre@email.de"
                     required
@@ -49,6 +83,8 @@ export default function Contact() {
                 <label className="block text-gray-700 mb-1 font-medium">Betreff</label>
                 <input
                   type="text"
+                  value={formData.subject}
+                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none"
                   placeholder="Betreff Ihrer Nachricht"
                 />
@@ -58,17 +94,32 @@ export default function Contact() {
                 <label className="block text-gray-700 mb-1 font-medium">Nachricht *</label>
                 <textarea
                   rows={4}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary focus:outline-none"
                   placeholder="Ihre Nachricht an uns..."
                   required
                 ></textarea>
               </div>
 
+              {status === 'success' && (
+                <div className="bg-green-50 text-green-700 px-4 py-3 rounded-lg">
+                  ✓ Nachricht erfolgreich gesendet!
+                </div>
+              )}
+
+              {status === 'error' && (
+                <div className="bg-red-50 text-red-700 px-4 py-3 rounded-lg">
+                  ✗ Fehler beim Senden. Bitte versuchen Sie es erneut.
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-secondary transition-colors"
+                disabled={status === 'loading'}
+                className="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-secondary transition-colors disabled:opacity-50"
               >
-                Nachricht senden
+                {status === 'loading' ? 'Wird gesendet...' : 'Nachricht senden'}
               </button>
             </form>
           </div>

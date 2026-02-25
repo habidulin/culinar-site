@@ -27,18 +27,37 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Имитация отправки заказа
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setIsSuccess(true)
-      clearCart()
+    try {
+      const response = await fetch('/api/order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formData,
+          items,
+          deliveryMethod,
+          totalPrice,
+          deliveryCost,
+          finalPrice
+        })
+      })
 
-      // Автоматическое закрытие через 3 секунды
-      setTimeout(() => {
-        onClose()
-        setIsSuccess(false)
-      }, 3000)
-    }, 2000)
+      if (response.ok) {
+        setIsSubmitting(false)
+        setIsSuccess(true)
+        clearCart()
+        setTimeout(() => {
+          onClose()
+          setIsSuccess(false)
+          setFormData({ name: '', email: '', phone: '', address: '', message: '' })
+        }, 3000)
+      } else {
+        setIsSubmitting(false)
+        alert('Fehler beim Senden der Bestellung. Bitte versuchen Sie es erneut.')
+      }
+    } catch (error) {
+      setIsSubmitting(false)
+      alert('Fehler beim Senden der Bestellung. Bitte versuchen Sie es erneut.')
+    }
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
