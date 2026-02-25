@@ -7,7 +7,7 @@ export async function POST(request: Request) {
   try {
     const { formData, items, deliveryMethod, totalPrice, deliveryCost, finalPrice } = await request.json()
 
-    const itemsList = items.map((item: any) => {
+    const itemsList = items.map((item: { id: string; name: string; price: string; quantity: number; weight?: string }) => {
       const itemTotal = parseFloat(item.price.replace('€', '').replace(',', '.').trim()) * item.quantity
       const weightInfo = item.weight ? ` (${item.weight})` : ''
       return `<tr>

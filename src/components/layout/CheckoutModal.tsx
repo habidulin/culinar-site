@@ -54,7 +54,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
         setIsSubmitting(false)
         alert('Fehler beim Senden der Bestellung. Bitte versuchen Sie es erneut.')
       }
-    } catch (error) {
+    } catch {
       setIsSubmitting(false)
       alert('Fehler beim Senden der Bestellung. Bitte versuchen Sie es erneut.')
     }

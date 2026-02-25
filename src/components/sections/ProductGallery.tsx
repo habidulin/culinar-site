@@ -10,11 +10,10 @@ import { Product } from '@/data/products'
 interface WeightSelectorProps {
   product: Product;
   selectedWeight: string;
-  selectedPrice: string;
   onWeightChange: (weight: string, price: string) => void;
 }
 
-function WeightSelector({ product, selectedWeight, selectedPrice, onWeightChange }: WeightSelectorProps) {
+function WeightSelector({ product, selectedWeight, onWeightChange }: WeightSelectorProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   if (!product.weightOptions || product.weightOptions.length === 0) {
@@ -201,7 +200,6 @@ export default function ProductGallery() {
                     <WeightSelector
                       product={product}
                       selectedWeight={getProductWeight(product.id, product).weight}
-                      selectedPrice={getProductWeight(product.id, product).price}
                       onWeightChange={(weight, price) => handleWeightChange(product.id, weight, price)}
                     />
                   </div>
