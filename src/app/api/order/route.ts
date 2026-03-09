@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY || '')
+// allow overriding the from address via env variable after domain verification
+const FROM_ADDRESS = process.env.EMAIL_FROM || 'onboarding@resend.dev'
 
 export async function POST(request: Request) {
   try {
@@ -19,7 +21,7 @@ export async function POST(request: Request) {
     }).join('')
 
     const data = await resend.emails.send({
-      from: 'Culinar Bestellung <onboarding@resend.dev>',
+      from: `Culinar Bestellung <${FROM_ADDRESS}>`,
       to: 'culinar.potsdam@gmx.de',
       replyTo: formData.email,
       subject: `🛒 Neue Bestellung von ${formData.name}`,
