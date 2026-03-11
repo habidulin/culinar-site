@@ -5,6 +5,11 @@ const resend = new Resend(process.env.RESEND_API_KEY || '')
 // allow overriding the from address via env variable after domain verification
 const FROM_ADDRESS = process.env.EMAIL_FROM || 'noreply@resend.dev'
 
+// warn if still using test domain, makes debugging easier
+if (FROM_ADDRESS.endsWith('@resend.dev')) {
+  console.warn('EMAIL_FROM not set – using resend.dev test address which only sends to your own email. Verify domain and set EMAIL_FROM to a verified address.');
+}
+
 export async function POST(request: Request) {
   try {
     const { name, email, subject, message } = await request.json()
