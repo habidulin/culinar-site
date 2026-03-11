@@ -3,7 +3,7 @@ import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY || '')
 // allow overriding the from address via env variable after domain verification
-const FROM_ADDRESS = process.env.EMAIL_FROM || 'onboarding@resend.dev'
+const FROM_ADDRESS = process.env.EMAIL_FROM || 'noreply@resend.dev'
 
 export async function POST(request: Request) {
   try {
