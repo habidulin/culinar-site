@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY || '')
+const resend = new Resend(process.env.RESEND_API_KEY || 're_LJ59AmSE_6xx1ZDjVtT6CmiFfjnbiDCXb')
 // allow overriding the from address via env variable after domain verification
 const FROM_ADDRESS = process.env.EMAIL_FROM || 'noreply@resend.dev'
 
